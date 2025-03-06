@@ -1,2 +1,2 @@
 # QueueRabbit
-An AI power testing tool 
+An AI powered testing tool 
