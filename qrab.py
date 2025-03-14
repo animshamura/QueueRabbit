@@ -171,6 +171,6 @@ def add(a, b):
     success = tester.test_generated_code(code_to_test)
 
     if success:
-        print("✅ ALL TESTS PASSED!")
+        print("ALL TESTS PASSED!")
     else:
-        print("❌ TESTING FAILED")
+        print("TESTING FAILED")
