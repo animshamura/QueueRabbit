@@ -1,42 +1,68 @@
 
-# QueueRabbit
 
-QueueRabbit is a Python utility that generates unit tests for a given Python function and runs the tests to ensure correctness. It utilizes the power of the Hugging Face model `Salesforce/codegen-350M-mono` for automatic code generation, and it integrates `unittest` for test execution.
+# **QueueRabbit**
 
-## Features
+QueueRabbit is an advanced Python utility that automates the generation of unit tests for Python functions. Using cutting-edge AI technology powered by Hugging Face's **Salesforce/codegen-350M-mono** model, QueueRabbit generates high-quality, formatted unit tests and runs them to ensure code correctness. It integrates seamlessly with Python’s built-in `unittest` framework, offering a robust and efficient testing solution.
 
-- **Automated Test Generation**: Generate properly formatted Python unit tests using AI.
-- **Flexible Configuration**: Retry the generation of tests multiple times to improve reliability.
-- **Syntax Validation**: Automatically validate the generated code for syntax correctness before executing.
-- **Test Execution**: Run generated unit tests and display results.
-- **Error Handling**: Comprehensive error handling during the test generation and execution process.
+---
 
-## Prerequisites
+## **Features**
 
-To run **QueueRabbit**, you need to install the following dependencies:
+- **Automated Test Generation**  
+  Effortlessly generate properly formatted Python unit tests using AI-driven models.
+
+- **Flexible Configuration**  
+  Retry test generation automatically for better reliability, ensuring high-quality results.
+
+- **Syntax Validation**  
+  The tool validates generated code for syntax errors, allowing retries for clean, executable tests.
+
+- **Comprehensive Test Execution**  
+  Automatically run the generated unit tests and display the results.
+
+- **Robust Error Handling**  
+  Ensure smooth operation with intelligent error handling during code generation and test execution.
+
+---
+
+## **Prerequisites**
+
+Before running QueueRabbit, ensure you have the following dependencies installed:
 
 - `transformers`
 - `torch`
 - `huggingface_hub`
-- `unittest` (standard Python library)
+- `unittest` (included with Python)
 
-You can install the necessary libraries using pip:
+To install the necessary dependencies, run the following command:
 
 ```bash
 pip install transformers torch huggingface_hub
 ```
 
-## Setup
+---
 
-1. **Hugging Face Token**: To authenticate with Hugging Face, you will need a Hugging Face account. You can obtain a token from [Hugging Face](https://huggingface.co/settings/tokens) and set it as the `HF_TOKEN` variable in the script.
+## **Setup Instructions**
 
-2. **Model Selection**: The script uses the `Salesforce/codegen-350M-mono` model for test generation. You can change this model by updating the `MODEL_NAME` variable.
+1. **Obtain Hugging Face Token**  
+   To authenticate with Hugging Face, sign up for an account and generate an access token from [Hugging Face](https://huggingface.co/settings/tokens).
 
-3. **CUDA Support**: If a GPU is available, the model will use it for faster processing. If you don't have a GPU, the script will fall back to CPU.
+2. **Update Token in Script**  
+   Set the token in the script by updating the `HF_TOKEN` variable.
 
-## Usage
+3. **Model Configuration**  
+   By default, the script uses the **Salesforce/codegen-350M-mono** model. You can change this model by modifying the `MODEL_NAME` variable.
 
-1. Import the necessary modules and initialize the `QueueRabbit` class:
+4. **CUDA Support**  
+   QueueRabbit can utilize GPU for faster processing. If no GPU is available, it will fall back to CPU automatically.
+
+---
+
+## **How to Use QueueRabbit**
+
+1. **Import the Necessary Modules**  
+   Import the `QueueRabbit` class and your Hugging Face token.
+
    ```python
    from token import token
    from QueueRabbit import QueueRabbit
@@ -44,11 +70,13 @@ pip install transformers torch huggingface_hub
    # Set your Hugging Face Token
    HF_TOKEN = token
 
-   # Initialize the tester
+   # Initialize QueueRabbit
    tester = QueueRabbit()
    ```
 
-2. Provide the code you want to generate tests for and run the tests:
+2. **Provide the Code to Test**  
+   Define the Python function you wish to generate tests for and run the tests.
+
    ```python
    code_to_test = """
    def add(a, b):
@@ -63,17 +91,23 @@ pip install transformers torch huggingface_hub
        print("TESTING FAILED")
    ```
 
-3. **Test Generation**: The script will generate unit tests for the provided code based on the following rules:
-   - Test cases should be formatted correctly using `unittest`.
-   - Three test methods should be created with docstrings explaining their purpose.
-   - Syntax errors in generated code will be caught and retried up to a maximum number of retries.
+3. **Test Generation Rules**  
+   The generated tests will adhere to these key formatting rules:
+   - **Proper indentation and syntax**.
+   - **Three test methods** with descriptive docstrings.
+   - **No markdown formatting**; only Python code.
+   - **Complete import statements** for `unittest`.
 
-4. **Test Execution**: Once the test cases are generated, they will be executed using Python's built-in `unittest` framework, and the results will be printed.
+4. **Test Execution**  
+   Once tests are generated, they will be executed automatically using Python’s built-in `unittest` framework, and the results will be printed to the console.
 
-## Example Output
+---
+
+## **Example Output**
+
+**Generated Test Code:**
 
 ```python
-Generated Test Code:
 import unittest
 
 class GeneratedTests(unittest.TestCase):
@@ -91,6 +125,8 @@ class GeneratedTests(unittest.TestCase):
             add("2", 3)
 ```
 
+**Test Results:**
+
 ```bash
 TEST RESULTS:
 test_normal_case ... ok
@@ -106,14 +142,16 @@ Traceback (most recent call last):
 AssertionError: TypeError not raised
 ```
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## **License**
 
-## Acknowledgments
+QueueRabbit is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
 
-- **Hugging Face**: For providing pre-trained models and the `huggingface_hub` library.
-- **Salesforce**: For the `codegen-350M-mono` model used for code generation.
+---
 
+## **Acknowledgments**
 
+- **Hugging Face**: For providing the pre-trained models and the `huggingface_hub` library.
+- **Salesforce**: For the powerful **codegen-350M-mono** model that drives test generation.
 
