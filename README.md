@@ -4,7 +4,7 @@
 
 QueueRabbit is an advanced Python utility that automates the generation of unit tests for Python functions. Using cutting-edge AI technology powered by Hugging Face's **Salesforce/codegen-350M-mono** model, QueueRabbit generates high-quality, formatted unit tests and runs them to ensure code correctness. It integrates seamlessly with Python’s built-in `unittest` framework, offering a robust and efficient testing solution.
 
----
+
 
 ## **Features**
 
@@ -23,7 +23,7 @@ QueueRabbit is an advanced Python utility that automates the generation of unit 
 - **Robust Error Handling**  
   Ensure smooth operation with intelligent error handling during code generation and test execution.
 
----
+
 
 ## **Prerequisites**
 
@@ -40,7 +40,7 @@ To install the necessary dependencies, run the following command:
 pip install transformers torch huggingface_hub
 ```
 
----
+
 
 ## **Setup Instructions**
 
@@ -56,7 +56,7 @@ pip install transformers torch huggingface_hub
 4. **CUDA Support**  
    QueueRabbit can utilize GPU for faster processing. If no GPU is available, it will fall back to CPU automatically.
 
----
+
 
 ## **How to Use QueueRabbit**
 
@@ -101,7 +101,7 @@ pip install transformers torch huggingface_hub
 4. **Test Execution**  
    Once tests are generated, they will be executed automatically using Python’s built-in `unittest` framework, and the results will be printed to the console.
 
----
+
 
 ## **Example Output**
 
@@ -142,13 +142,12 @@ Traceback (most recent call last):
 AssertionError: TypeError not raised
 ```
 
----
 
 ## **License**
 
 QueueRabbit is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
 
----
+
 
 ## **Acknowledgments**
 
